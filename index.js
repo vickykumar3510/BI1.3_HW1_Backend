@@ -3,7 +3,9 @@ const cors = require("cors")
 const app = express()
 const { initalizedData } = require("./db/db.connect")
 const Book = require("./models/books.models")
-app.use(cors())
+app.use(cors({
+  origin: "http://localhost:5173"
+}));
 app.use(express.json())
 
 initalizedData()
@@ -221,7 +223,4 @@ app.delete("/books/id/:id", async(req, res) => {
 })
 
 
-const PORT = 3000
-app.listen(PORT, () => {
-    console.log(`server is running at port, ${PORT}`)
-})
+module.exports = app;
