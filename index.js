@@ -3,9 +3,7 @@ const cors = require("cors")
 const app = express()
 const { initalizedData } = require("./db/db.connect")
 const Book = require("./models/books.models")
-app.use(cors({
-  origin: "http://localhost:5173"
-}));
+app.use(cors())
 app.use(express.json())
 
 initalizedData()
