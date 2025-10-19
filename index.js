@@ -30,7 +30,7 @@ app.post("/books", async(req, res) => {
 })
 
 //question 3
-async function getAllBook(){
+async function getAllBook(book){
     try{
         const allBooks = await Book.find()
         return allBooks
